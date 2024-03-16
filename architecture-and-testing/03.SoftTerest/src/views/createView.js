@@ -12,17 +12,17 @@ export function createView(ctx) {
 
 async function onSubmit(e) {
     e.preventDefault();
-
+    debugger
     const formData = new FormData(e.target);
-    console.log(formData);
-    const { title, description, imageURL } = Object.fromEntries(formData);
+    const data = [...formData.entries()]
+    const { title, description, imageURL } = Object.fromEntries(data);
     // console.log(title, description, img);
-
-    if (title.length < 6 || description < 10 || imageURL.length < 5) {
+    if (title.length < 6 || description.length < 10 || imageURL.length < 5) {
         return alert('Something wrong')
     }
-
-    await dataService.createIdea({ title, description, imageURL });
-    context.goTo('/dashboard');
+    
+    const img = imageURL;
+    await dataService.createIdea({ title, description, img });
     form.reset();
+    context.goTo('/dashboard');
 }
