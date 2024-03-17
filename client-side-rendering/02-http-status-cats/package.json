@@ -1,0 +1,20 @@
+{
+  "name": "02.movie",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha tests",
+    "start": "http-server -a localhost -p 3000 -P http://localhost:3000? -c-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit-html": "^3.1.2",
+    "page": "^1.11.6"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "description": ""
+}
